@@ -12,10 +12,13 @@
         box-sizing: border-box;
         font-family: 'Exo 2', sans-serif;
 
-        --color-grey: #E6E6E6;
-        --color-grey-dark: #878787;
+        --color-grey-100: #E6E6E6;
+        --color-grey-200: #DADADA;
+        --color-grey-300: #B7B7B7;
+        --color-grey-400: #878787;
         --color-dark: #2B2B2B;
-        --color-red: #E73333;
+        --color-red-100: #E73333;
+        --color-red-200: #D72F2F;
 
         --color-font: #2B2B2B;
     }

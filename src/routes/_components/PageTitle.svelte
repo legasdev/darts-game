@@ -12,7 +12,7 @@
         align-items: center;
         width: 100%;
         margin-bottom: 3.875rem;
-        border-bottom: 1px solid var(--color-grey);
+        border-bottom: 1px solid var(--color-grey-100);
     }
 
     .title {

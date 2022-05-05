@@ -22,6 +22,6 @@
         font-size: 0.875rem;
         line-height: 1.063em;
         text-align: center;
-        color: var(--color-grey-dark);
+        color: var(--color-grey-400);
     }
 </style>

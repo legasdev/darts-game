@@ -18,7 +18,7 @@
     .button {
         padding: 0.875rem 1.125rem;
         background-color: transparent;
-        border: 1px solid var(--color-red);
+        border: 1px solid var(--color-red-100);
         border-radius: 0.188rem;
         cursor: pointer;
         text-decoration: none;

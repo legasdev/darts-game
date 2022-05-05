@@ -14,21 +14,23 @@
 </svelte:head>
 
 <div class="center-block">
-    <PageTitle title="Дартс" />
-    <main>
-        <ButtonDefault
-            value="Начать игру"
-            style='min-width: 230px;'
-            isLink="/game"
-        />
-        {#if $gameData}
-            <div class="save-game-block">
-                <Link href="/game" value="Продолжить сохраненную игру" />
-            </div>
-        {/if}
-    </main>
+    <div class="wrapper">
+        <PageTitle title="Дартс" />
+        <main>
+            <ButtonDefault
+                    value="Начать игру"
+                    style='min-width: 230px;'
+                    isLink="/game"
+            />
+            {#if $gameData}
+                <div class="save-game-block">
+                    <Link href="/game" value="Продолжить сохраненную игру" />
+                </div>
+            {/if}
+        </main>
+    </div>
+    <Footer />
 </div>
-<Footer />
 
 <style>
     .center-block {
@@ -37,7 +39,12 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        margin-top: 128px;
+        height: 100%;
+        padding-top: 128px;
+    }
+
+    .wrapper {
+        width: 100%;
     }
 
     main {
