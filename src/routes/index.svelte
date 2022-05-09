@@ -1,6 +1,6 @@
 
 <script>
-    import {gameData} from "../stores/app";
+    import {gameData} from "../lib/stores/app";
 
     import PageTitle from "./_components/PageTitle.svelte";
     import ButtonDefault from "./_components/ui/ButtonDefault/index.svelte";

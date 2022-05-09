@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-import {LS_NAMES} from "../../lib/constants/index.js";
+import {LS_NAMES} from "../../constants/index.js";
 
 
 function createGameData() {

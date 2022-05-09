@@ -28,5 +28,6 @@
         appearance: none;
         border: none;
         transform: translate(-50%, -50%);
+        cursor: pointer;
     }
 </style>

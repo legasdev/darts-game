@@ -18,5 +18,6 @@
     .title {
         margin: 0 auto 3rem;
         font-size: 2.25rem;
+        text-align: center;
     }
 </style>

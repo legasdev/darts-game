@@ -1,36 +1,42 @@
 <script>
     export let id = Math.random();
     export let label = null;
-    export let placeholder = '';
-    export let value = '';
+    export let min = 0;
+    export let max = 1;
+    export let value = min;
+    export let style = "";
+
+    function handleInput(event) {
+        const
+            valueInput = event.target.value;
+
+        value = +valueInput > max
+            ? max
+            : valueInput;
+    }
 </script>
 
 
-<div class="input-wrapper" >
+<div class="input-wrapper" style={style}>
     {#if label}
-        <label class="label" for={id}>{label}</label>
+        <label for={id}>{label}</label>
     {/if}
     <input
         id={id}
-        type="text"
-        placeholder={placeholder}
-        aria-placeholder={placeholder}
+        type="number"
+        max={max}
+        min={min}
+        on:input={handleInput}
         bind:value
     />
 </div>
+
 
 <style>
     .input-wrapper {
         display: flex;
         flex-direction: column;
         width: 100%;
-    }
-
-    label {
-        font-family: 'Exo 2', sans-serif;
-        color: var(--color-font);
-        margin-bottom: 0.375rem;
-        padding-left: 0.25rem;
     }
 
     input {
@@ -43,12 +49,11 @@
         border-radius: 0.188rem;
     }
 
-    input::placeholder {
+    label {
         font-family: 'Exo 2', sans-serif;
-        color: var(--color-grey-300);
-        font-weight: 300;
-        font-size: 1.125rem;
-        line-height: 1.375rem;
+        color: var(--color-font);
+        margin-bottom: 0.375rem;
+        padding-left: 0.25rem;
     }
 
     @media screen and (max-width: 480px) {

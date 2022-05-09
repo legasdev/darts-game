@@ -25,7 +25,7 @@
 
     :global(body) {
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
         padding: 3rem 1rem;
     }
 

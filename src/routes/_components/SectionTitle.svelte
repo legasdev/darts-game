@@ -60,4 +60,15 @@
         text-align: right;
         text-decoration: none;
     }
+
+    @media screen and (max-width: 480px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .title {
+            margin-bottom: 0.5rem;
+        }
+    }
 </style>

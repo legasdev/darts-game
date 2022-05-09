@@ -1,22 +1,35 @@
+<script context="module">
+    export async function load({ fetch }) {
+        const gameTypes = await (await fetch(`/game/gameTypes.json`)).json();
+
+        return {
+            props: {
+                gameTypes
+            },
+        };
+    }
+</script>
+
 <script>
-    import {gameData} from "../../stores/app";
+    import { gameData, players } from "$lib/stores/app";
+
     import PageTitle from "../_components/PageTitle.svelte";
     import SettingsBlock from "../_components/SettingsBlock.svelte";
     import SectionTitle from "../_components/SectionTitle.svelte";
-    import InputText from "../_components/ui/InputText.svelte";
-    import ColorPicker from "../_components/ui/ColorPicker.svelte";
+    import PlayerRowPreview from "../_components/PlayerRowPreview.svelte";
+    import AddPlayer from "../_components/AddPlayer.svelte";
+    import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
+    import Select from "../_components/ui/ButtonDefault/Select.svelte";
+    import InputNumber from "../_components/ui/InputNumber.svelte";
 
-    let colorValue = '#1c63ec';
+    export let gameTypes;
+    let selectedGameId = gameTypes[0].id;
 
-    function inputBlur(event) {
-        const
-            value = event.target.value;
+    $: isEnoughPlayers = $players?.length > 1;
+    $: selectedGame = gameTypes?.find(game => game.id === selectedGameId);
 
-        if ( !value ) return;
-
-        console.log('event', event)
-        console.log('event value', value)
-        console.log('event value length', value.length)
+    function handleStartGame() {
+        console.log('Start')
     }
 </script>
 
@@ -29,21 +42,52 @@
 <main>
     <SettingsBlock>
         <SectionTitle title="Игроки" info={{
-            text: 'Мин. участников: 2',
+            text: isEnoughPlayers ? '' : 'Мин. участников: 2',
+            title: $players?.length
         }} />
-        <div class="input-block">
-            <InputText
-                id="userName"
-                placeholder="Имя игрока"
-                on:blur={inputBlur}
-            />
-            <ColorPicker
-                id="userColor"
-                style="margin-left: 38px;"
-                bind:value={colorValue}
-            />
-        </div>
+        {#if $players}
+            {#each $players as player (player.id)}
+                <PlayerRowPreview player={player} />
+            {/each}
+        {/if}
+        <AddPlayer />
     </SettingsBlock>
+
+    <SettingsBlock>
+        <SectionTitle title="Тип игры" info={{
+            text: 'Правила',
+            href: selectedGame.rules,
+        }} />
+        <Select id="gameType" list={gameTypes} bind:value={selectedGameId} />
+    </SettingsBlock>
+
+    <SettingsBlock>
+        <SectionTitle title="Настройки" />
+        {#each selectedGame.settings as option (option.id)}
+            {#if option.type === 'select' }
+                <Select
+                    id={option.id}
+                    label={option.name}
+                    list={option.options}
+                    style="margin-bottom: 32px;"
+                />
+            {:else if option.type === 'number'}
+                <InputNumber
+                    id={option.id}
+                    label={option.name}
+                    min={option.min}
+                    max={option.max}
+                />
+            {/if}
+        {/each}
+    </SettingsBlock>
+
+    <ButtonDefault
+        value="Начать игру"
+        style="min-width: 230px"
+        disabled={!isEnoughPlayers}
+        on:click={handleStartGame}
+    />
 </main>
 
 
@@ -55,11 +99,5 @@
         width: 100%;
         max-width: 436px;
         margin: 0 auto;
-    }
-
-    .input-block {
-        display: flex;
-        align-items: center;
-        width: 100%;
     }
 </style>
