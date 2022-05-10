@@ -18,7 +18,7 @@
 <div class="user">
     <span class="user_name">{name}</span>
     <div class="user_ui">
-        <div class="user_color" style={`background: ${color};`}>
+        <div class="user_color" style:background={color}>
             <span class="user_first-letter">{name[0].toString().toUpperCase()}</span>
         </div>
         <button on:click={handleClickRemove}>

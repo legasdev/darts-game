@@ -3,8 +3,17 @@ import { writable } from "svelte/store";
 import {LS_NAMES} from "../../constants/index.js";
 
 
+function getLocalData() {
+    try {
+        return localStorage.getItem(LS_NAMES.gameData);
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function createGameData() {
-    const gameData = localStorage && localStorage.getItem(LS_NAMES.gameData);
+    const gameData = getLocalData();
 
     const { subscribe, set, update } = writable(gameData);
 

@@ -4,10 +4,12 @@
     export let list = [];
     export let value;
     export let style = "";
+
+    console.log('value', value)
 </script>
 
 
-<div class="input-wrapper" style={style}>
+<div class="input-wrapper" {style}>
     {#if label}
         <label class="label" for={id}>{label}</label>
     {/if}

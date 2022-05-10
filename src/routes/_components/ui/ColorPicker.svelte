@@ -4,8 +4,8 @@
     export let value;
 </script>
 
-<div class="wrapper" style={style}>
-    <input id={id} type="color" bind:value />
+<div class="wrapper" {style}>
+    <input {id} type="color" bind:value />
 </div>
 
 

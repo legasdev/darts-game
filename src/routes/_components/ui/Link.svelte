@@ -4,7 +4,7 @@
 </script>
 
 
-<a class="link" href={href}>{value}</a>
+<a class="link" {href}>{value}</a>
 
 
 <style>

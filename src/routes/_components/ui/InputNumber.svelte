@@ -12,20 +12,20 @@
 
         value = +valueInput > max
             ? max
-            : valueInput;
+            : +valueInput;
     }
 </script>
 
 
-<div class="input-wrapper" style={style}>
+<div class="input-wrapper" {style}>
     {#if label}
         <label for={id}>{label}</label>
     {/if}
     <input
         id={id}
         type="number"
-        max={max}
-        min={min}
+        {max}
+        {min}
         on:input={handleInput}
         bind:value
     />

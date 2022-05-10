@@ -13,7 +13,7 @@
     <input
         id={id}
         type="text"
-        placeholder={placeholder}
+        {placeholder}
         aria-placeholder={placeholder}
         bind:value
     />

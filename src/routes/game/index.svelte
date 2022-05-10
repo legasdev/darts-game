@@ -22,14 +22,33 @@
     import Select from "../_components/ui/ButtonDefault/Select.svelte";
     import InputNumber from "../_components/ui/InputNumber.svelte";
 
+
     export let gameTypes;
+
     let selectedGameId = gameTypes[0].id;
+    let isEnoughPlayers = false;
+    let selectedGame = findSelectedGame(gameTypes, selectedGameId);
+    let gameSettings = reduceSettingsStructure(selectedGame.settings);
+
 
     $: isEnoughPlayers = $players?.length > 1;
-    $: selectedGame = gameTypes?.find(game => game.id === selectedGameId);
+    $: selectedGame = findSelectedGame(gameTypes, selectedGameId);
+
+
+
+    function reduceSettingsStructure(settings) {
+        return settings.reduce((obj, option) => ({
+            ...obj,
+            [option.id]: option.default,
+        }), {});
+    }
+
+    function findSelectedGame(gamesList, gameId) {
+        return gamesList.find(game => game.id === gameId);
+    }
 
     function handleStartGame() {
-        console.log('Start')
+        console.log('gameSettings', gameSettings)
     }
 </script>
 
@@ -70,6 +89,7 @@
                     label={option.name}
                     list={option.options}
                     style="margin-bottom: 32px;"
+                    bind:value={gameSettings[option.id]}
                 />
             {:else if option.type === 'number'}
                 <InputNumber
@@ -77,6 +97,7 @@
                     label={option.name}
                     min={option.min}
                     max={option.max}
+                    bind:value={gameSettings[option.id]}
                 />
             {/if}
         {/each}
