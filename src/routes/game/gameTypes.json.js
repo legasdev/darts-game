@@ -34,7 +34,11 @@ export async function get() {
                         max: '9',
                         default: '1',
                     }
-                ]
+                ],
+                playersInitialData: {
+                    score: 0,
+                    roundsWon: 0,
+                },
             },
             {
                 id: '20',

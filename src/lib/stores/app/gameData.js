@@ -15,7 +15,12 @@ function getLocalData() {
 function createGameData() {
     const gameData = getLocalData();
 
-    const { subscribe, set, update } = writable(gameData);
+    const { subscribe, set: storeSet, update } = writable(gameData);
+
+    function set(data) {
+        storeSet(data);
+        localStorage.setItem(LS_NAMES.gameData, JSON.stringify(data));
+    }
 
     return {
         subscribe,
