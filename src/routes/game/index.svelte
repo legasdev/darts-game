@@ -15,6 +15,7 @@
 
     import PageTitle from "../_components/PageTitle.svelte";
     import SettingsGame from "./SettingsGame.svelte";
+    import Game from "./Game.svelte";
 
     export let gameTypes;
 </script>
@@ -27,7 +28,7 @@
 <PageTitle title={$gameData ? 'Игра' : 'Подготовка к игре'} />
 <main>
     {#if $gameData}
-        <div>Игра</div>
+        <Game {gameTypes} />
     {:else}
         <SettingsGame {gameTypes} />
     {/if}

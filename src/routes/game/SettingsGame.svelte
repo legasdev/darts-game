@@ -1,13 +1,13 @@
 <script>
     import { gameData, players } from "$lib/stores/app";
 
-    import SettingsBlock from "../_components/SettingsBlock.svelte";
+    import SectionBlock from "../_components/SectionBlock.svelte";
     import SectionTitle from "../_components/SectionTitle.svelte";
     import PlayerRowPreview from "../_components/PlayerRowPreview.svelte";
     import AddPlayer from "../_components/AddPlayer.svelte";
-    import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
     import Select from "../_components/ui/ButtonDefault/Select.svelte";
     import SettingsGameBlock from "../_components/SettingsGameBlock.svelte";
+    import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
 
 
     export let gameTypes;
@@ -56,7 +56,7 @@
 </script>
 
 
-<SettingsBlock>
+<SectionBlock>
     <SectionTitle title="Игроки" info={{
             text: isEnoughPlayers ? '' : 'Мин. участников: 2',
             title: $players?.length
@@ -67,20 +67,20 @@
         {/each}
     {/if}
     <AddPlayer />
-</SettingsBlock>
+</SectionBlock>
 
-<SettingsBlock>
+<SectionBlock>
     <SectionTitle title="Тип игры" info={{
             text: 'Правила',
             href: selectedGame.rules,
         }} />
     <Select id="gameType" list={gameTypes} bind:value={selectedGameId} />
-</SettingsBlock>
+</SectionBlock>
 
-<SettingsBlock>
+<SectionBlock>
     <SectionTitle title="Настройки" />
     <SettingsGameBlock settings={selectedGame.settings} {gameSettings} />
-</SettingsBlock>
+</SectionBlock>
 
 <ButtonDefault
         value="Начать игру"

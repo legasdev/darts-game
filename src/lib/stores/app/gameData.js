@@ -5,7 +5,8 @@ import {LS_NAMES} from "../../constants/index.js";
 
 function getLocalData() {
     try {
-        return localStorage.getItem(LS_NAMES.gameData);
+        const gameData = localStorage.getItem(LS_NAMES.gameData);
+        return gameData ? JSON.parse(gameData) : gameData;
     } catch (error) {
         return null;
     }
