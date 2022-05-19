@@ -10,6 +10,7 @@ function createPlayers() {
                 id: playersList[playersList.length - 1]?.id + 1 || 0,
                 name,
                 color,
+                isTurn: playersList.length === 0,
             }
         ]);
     }

@@ -7,27 +7,43 @@
 
     export let gameTypes;
 
-    let players = getPlayersFromGameData();
-
-    $: players = getPlayersFromGameData();
-
-    function getPlayersFromGameData() {
-        return $gameData.players;
+    function getPlayersFromGameData(gameData) {
+        return gameData?.players || [];
     }
 
-    console.log('gameData', $gameData);
-    console.log('players', players)
+    function getPlayerIdInTurn(playersList) {
+        return playersList.find(({ isTurn }) => isTurn)?.id;
+    }
+
+    function getPlayerNameInTurn(players, playedId) {
+        return players.find(({ id }) => id === playedId)?.name || '';
+    }
+
+    let players = getPlayersFromGameData($gameData);
+    let playerIdInTurn = getPlayerIdInTurn(players);
+    let playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
+
+    $: {
+        players = getPlayersFromGameData($gameData);
+        console.log(`Информация об игре обновилась:`, $gameData);
+        console.log(`Игроки:`, players);
+    }
+    $: playerIdInTurn = getPlayerIdInTurn(players);
+    $: {
+        playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
+        console.log(`Ход игрока: ${playerIdInTurn}:${playerNameInTurn}`);
+    }
 </script>
 
 
 <SectionBlock>
     <SectionTitle title="Игровая таблица" />
-    <PlayersTable {players} />
+    <PlayersTable {players} {playerIdInTurn} />
 </SectionBlock>
 
 <SectionBlock>
     <SectionTitle title="Играет" info={{
-        title: 'Артем'
+        title: playerNameInTurn
     }} />
 </SectionBlock>
 

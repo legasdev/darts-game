@@ -1,5 +1,6 @@
 <script>
     import { players } from "$lib/stores/app";
+    import UserFirstLetterOnColor from "./ui/UserFirstLetterOnColor.svelte";
 
     export let player = {
         id: null,
@@ -18,9 +19,7 @@
 <div class="user">
     <span class="user_name">{name}</span>
     <div class="user_ui">
-        <div class="user_color" style:background={color}>
-            <span class="user_first-letter">{name[0].toString().toUpperCase()}</span>
-        </div>
+        <UserFirstLetterOnColor {color} {name} />
         <button on:click={handleClickRemove}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 8.21948L16 15.7805" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"/>
@@ -53,24 +52,6 @@
         line-height: 1.375rem;
         border-radius: 0.188rem;
         width: 100%;
-    }
-
-    .user_color {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 3rem;
-        min-height: 3rem;
-        border-radius: 0.188rem;
-    }
-
-    .user_first-letter {
-        font-family: 'Exo 2', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.5rem;
-        line-height: 1.813rem;
-        color: var(--color-grey-100);
     }
 
     button {
