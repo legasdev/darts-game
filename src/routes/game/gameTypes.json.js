@@ -40,21 +40,6 @@ export async function get() {
                     roundsWon: 0,
                 },
             },
-            {
-                id: '20',
-                name: 'Игра в 20',
-                rules: 'https://shotdarts.com/blogs/discover/a-starter-for-5-basic-dart-games-you-should-know',
-                settings: [
-                    {
-                        id: '20_rounds-to-win',
-                        name: 'Попаданий в 20 для победы',
-                        type: 'number',
-                        min: '1',
-                        max: '20',
-                        default: '1',
-                    }
-                ]
-            },
         ]
     };
 }

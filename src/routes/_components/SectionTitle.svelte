@@ -11,7 +11,7 @@
 <header>
     <div class="title">
         <h2>{title}</h2>
-        {#if info.title}
+        {#if info.title || info.title === 0}
             <span class="title-add-text">/ {info.title}</span>
         {/if}
     </div>

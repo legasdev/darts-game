@@ -12,7 +12,7 @@
 
     export let gameTypes;
 
-    let selectedGameId = gameTypes[1].id;
+    let selectedGameId = gameTypes[0].id;
     let isEnoughPlayers = false;
     let selectedGame = findSelectedGame(gameTypes, selectedGameId);
     let gameSettings = reduceSettingsStructure(selectedGame.settings);
@@ -83,8 +83,8 @@
 </SectionBlock>
 
 <ButtonDefault
-        value="Начать игру"
-        style="min-width: 230px"
-        disabled={!isEnoughPlayers}
-        on:click={handleStartGame}
+    value="Начать игру"
+    style="min-width: 230px"
+    disabled={!isEnoughPlayers}
+    on:click={handleStartGame}
 />

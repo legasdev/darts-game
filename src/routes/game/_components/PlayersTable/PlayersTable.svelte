@@ -24,9 +24,7 @@
     .table {
         display: grid;
         grid-auto-rows: auto;
-        row-gap: 28px;
+        row-gap: 1.5rem;
         width: 100%;
     }
-
-
 </style>

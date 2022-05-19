@@ -4,8 +4,6 @@
     export let player;
 
     const { name, color, roundsWon, score } = player;
-
-    console.log(player);
 </script>
 
 <UserFirstLetterOnColor {color} {name} />

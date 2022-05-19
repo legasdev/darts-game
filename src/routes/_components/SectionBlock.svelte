@@ -1,4 +1,9 @@
-<section>
+<script>
+    export let style = "";
+</script>
+
+
+<section {style}>
     <slot />
 </section>
 
