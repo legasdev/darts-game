@@ -6,6 +6,11 @@
     import ButtonDefault from "./_components/ui/ButtonDefault/index.svelte";
     import Footer from "./_components/Footer.svelte";
     import Link from "./_components/ui/Link.svelte";
+
+
+    function handleClickNewGame() {
+        gameData.newGame();
+    }
 </script>
 
 
@@ -19,7 +24,8 @@
         <main>
             <ButtonDefault
                 value="Начать игру"
-                style='min-width: 230px;'
+                style="min-width: 230px;"
+                on:click={handleClickNewGame}
                 isLink={`${base}/game/`}
             />
             {#if $gameData}

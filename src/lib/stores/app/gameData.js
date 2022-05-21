@@ -33,6 +33,13 @@ function createGameData() {
         saveDataToLocalStorage(data);
     }
 
+    function newGame() {
+        if ( !browser ) return;
+
+        storeSet(null);
+        localStorage.removeItem(LS_NAMES.gameData);
+    }
+
     function updatePlayerTurn(playerId, values, multipliers) {
         update(({ players, ...data }) => {
             const updatedGameData = {
@@ -60,6 +67,7 @@ function createGameData() {
         set,
         update,
         updatePlayerTurn,
+        newGame,
     };
 }
 
