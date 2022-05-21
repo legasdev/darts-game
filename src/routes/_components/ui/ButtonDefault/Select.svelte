@@ -4,8 +4,6 @@
     export let list = [];
     export let value;
     export let style = "";
-
-    console.log('value', value)
 </script>
 
 
@@ -14,9 +12,11 @@
         <label class="label" for={id}>{label}</label>
     {/if}
     <select id={id} bind:value>
-        {#each list as item (item.id)}
-            <option value={item.id}>{item.name}</option>
-        {/each}
+        {#if list}
+            {#each list as item (item.id)}
+                <option value={item.id}>{item.name}</option>
+            {/each}
+        {/if}
     </select>
     <svg class="input_arrow" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="44" height="44" fill="white"/>

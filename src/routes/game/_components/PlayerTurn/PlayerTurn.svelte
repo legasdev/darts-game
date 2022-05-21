@@ -13,9 +13,9 @@
         {id: "3", name: "Третий бросок"},
     ];
 
-    let infoByTurn = players.find(({ id }) => id === playerId ).turn;
+    let infoByTurn = players.find(({ id }) => id === playerId )?.turn || [];
     let inputValues = infoByTurn.map(({ value }) => value);
-    let values =[0, 0, 0];
+    let values = [0, 0, 0];
     let multipliers = infoByTurn.map(({ multiple }) => multiple);
 
     $: {

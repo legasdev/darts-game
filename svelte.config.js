@@ -6,13 +6,17 @@ const dev = process.env.NODE_ENV === 'development';
 const config = {
 	kit: {
 		adapter: adapter({
-			pages: "docs",
-			assets: "docs",
-			fallback: "index.html"
+			pages: 'docs',
+			assets: 'docs',
 		}),
+		prerender: {
+			default: true
+		},
 		paths: {
 			base: dev ? "" : "/darts-game"
-		}
+		},
+		appDir: 'internal',
+		trailingSlash: "always",
 	}
 };
 

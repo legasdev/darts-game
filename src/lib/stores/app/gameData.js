@@ -1,13 +1,17 @@
 import { writable } from "svelte/store";
+import { browser } from "$app/env"
 
-import {LS_NAMES} from "../../constants/index.js";
+import { LS_NAMES } from "$lib/constants/index.js";
 
 
 function getLocalData() {
     try {
+        if ( !browser ) return {};
+
         const gameData = localStorage.getItem(LS_NAMES.gameData);
         return gameData ? JSON.parse(gameData) : gameData;
     } catch (error) {
+        console.error(error);
         return null;
     }
 }
@@ -19,7 +23,7 @@ function createGameData() {
     const { subscribe, set: storeSet, update } = writable(gameData);
 
     function saveDataToLocalStorage(infoByGameData) {
-        if ( !infoByGameData ) return;
+        if ( !infoByGameData || !browser ) return;
 
         localStorage.setItem(LS_NAMES.gameData, JSON.stringify(infoByGameData));
     }
@@ -33,7 +37,7 @@ function createGameData() {
         update(({ players, ...data }) => {
             const updatedGameData = {
                 ...data,
-                players: players.map(player => {
+                players: players?.map(player => {
                     return player.id !== playerId
                         ? player
                         : {

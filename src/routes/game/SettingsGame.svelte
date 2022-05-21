@@ -10,42 +10,42 @@
     import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
 
 
-    export let gameTypes;
+    export let gameTypes = [];
 
-    let selectedGameId = gameTypes[0].id;
+    let selectedGameId = gameTypes[0]?.id;
     let isEnoughPlayers = false;
     let selectedGame = findSelectedGame(gameTypes, selectedGameId);
-    let gameSettings = reduceSettingsStructure(selectedGame.settings);
+    let gameSettings = reduceSettingsStructure(selectedGame?.settings);
 
     $: isEnoughPlayers = $players?.length > 1;
     $: selectedGame = findSelectedGame(gameTypes, selectedGameId);
 
 
     function reduceSettingsStructure(settings) {
-        return settings.reduce((obj, option) => ({
+        return settings?.reduce((obj, option) => ({
             ...obj,
             [option.id]: option.default,
         }), {});
     }
 
     function findSelectedGame(gamesList, gameId) {
-        return gamesList.find(game => game.id === gameId);
+        return gamesList?.find(game => game.id === gameId);
     }
 
     function handleStartGame() {
         const
-            selectedSettings = selectedGame.settings.map(({id}) => id),
+            selectedSettings = selectedGame?.settings.map(({id}) => id),
 
             gameDataObject = {
                 id: Date.now(),
                 gameId: selectedGameId,
-                settings: selectedSettings.reduce((obj, option) => (
+                settings: selectedSettings?.reduce((obj, option) => (
                         {
                             ...obj,
                             [option]: gameSettings[option] || null,
                         })
                     , {}),
-                players: $players.map(player => ({
+                players: $players?.map(player => ({
                     ...player,
                     ...selectedGame.playersInitialData,
                 })),
@@ -72,14 +72,14 @@
 <SectionBlock>
     <SectionTitle title="Тип игры" info={{
             text: 'Правила',
-            href: selectedGame.rules,
+            href: selectedGame?.rules,
         }} />
     <Select id="gameType" list={gameTypes} bind:value={selectedGameId} />
 </SectionBlock>
 
 <SectionBlock>
     <SectionTitle title="Настройки" />
-    <SettingsGameBlock settings={selectedGame.settings} {gameSettings} />
+    <SettingsGameBlock settings={selectedGame?.settings} {gameSettings} />
 </SectionBlock>
 
 <ButtonDefault

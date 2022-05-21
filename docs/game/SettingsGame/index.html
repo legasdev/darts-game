@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/darts-game/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/darts-game/internal/assets/pages/__layout.svelte-3f11f91a.css">
+	<link rel="stylesheet" href="/darts-game/internal/assets/pages/game/SettingsGame.svelte-9a5ed9dc.css">
+	<link rel="stylesheet" href="/darts-game/internal/assets/index-91a330f5.css">
+	<link rel="stylesheet" href="/darts-game/internal/assets/InputNumber-092dd856.css">
+	<link rel="modulepreload" href="/darts-game/internal/start-9e8630f0.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/index-2e7372d8.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/index-8afca181.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="/darts-game/internal/pages/__layout.svelte-bd51cc5f.js">
+	<link rel="modulepreload" href="/darts-game/internal/pages/game/SettingsGame.svelte-3bd43b90.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/index-44395234.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/InputNumber-9bcb34ff.js">
+	</head>
+	<body>
+		
+
+
+<div class="page-wrapper svelte-fw0cbm"><section style="" class="svelte-1jxm6rz"><header class="svelte-z127uo"><div class="title svelte-z127uo"><h2>Игроки</h2>
+        <span class="title-add-text svelte-z127uo">/ 0</span></div>
+    <span class="link svelte-z127uo">Мин. участников: 2</span>
+</header>
+    
+    <div class="input-block svelte-1gmbrzv"><div class="input-wrapper svelte-1q6jnob">
+    <input id="userName" type="text" placeholder="Имя игрока" aria-placeholder="Имя игрока" class="svelte-1q6jnob" value="">
+</div>
+    <div class="input-block_ui svelte-1gmbrzv"><div class="wrapper svelte-huv6aq" style=""><input id="userColor" type="color" class="svelte-huv6aq" value="#64507a">
+</div>
+        <button class="input-block_add svelte-1gmbrzv"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4817 15.3479L18.8996 8.06984" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.10983 10.7586L11.4316 15.3" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div>
+</div>
+</section>
+
+<section style="" class="svelte-1jxm6rz"><header class="svelte-z127uo"><div class="title svelte-z127uo"><h2>Тип игры</h2>
+        </div>
+    <span class="link svelte-z127uo">Правила</span>
+</header>
+    <div class="input-wrapper svelte-1r2qk57" style="">
+    <select id="gameType" class="svelte-1r2qk57"></select>
+    <svg class="input_arrow svelte-1r2qk57" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="44" height="44" fill="white"></rect><path d="M19.5076 18L26.7857 25.4178" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path><path d="M33.7966 18L26.7858 25.4178" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</section>
+
+<section style="" class="svelte-1jxm6rz"><header class="svelte-z127uo"><div class="title svelte-z127uo"><h2>Настройки</h2>
+        </div>
+    
+</header>
+    
+</section>
+
+<button class="button svelte-13a9a0k" disabled style="min-width: 230px"><span class="wrapper svelte-17vy3z2"><span class="value-text svelte-17vy3z2">Начать игру</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="svg-line svelte-17vy3z2" d="M8.85083 19.1988L16.2686 11.9206" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path><path class="svg-line svelte-17vy3z2" d="M8.85083 4.90973L16.2686 11.9205" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></button>
+</div>
+
+
+		<script type="module" data-sveltekit-hydrate="z9cabp">
+		import { start } from "/darts-game/internal/start-9e8630f0.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="z9cabp"]').parentNode,
+			paths: {"base":"/darts-game","assets":"/darts-game"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/darts-game/internal/pages/__layout.svelte-bd51cc5f.js"),
+						import("/darts-game/internal/pages/game/SettingsGame.svelte-3bd43b90.js")
+				],
+				params: {},
+				routeId: "game/SettingsGame"
+			}
+		});
+	</script>
+	</body>
+</html>

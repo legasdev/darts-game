@@ -1,12 +1,19 @@
 <script context="module">
-    export async function load({ fetch }) {
-        const gameTypes = await (await fetch(`/game/gameTypes.json`)).json();
+    import { base } from '$app/paths';
 
-        return {
-            props: {
-                gameTypes
-            },
-        };
+    export async function load({ fetch }) {
+        try {
+            const response = await fetch(`${base}/game/gameTypes.json`);
+
+            return {
+                props: {
+                    gameTypes: await response.json(),
+                },
+            };
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
     }
 </script>
 

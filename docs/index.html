@@ -4,23 +4,57 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/darts-game/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/darts-game/_app/start-0e74b551.js">
-	<link rel="modulepreload" href="/darts-game/_app/chunks/index-1432aad0.js">
-	<link rel="modulepreload" href="/darts-game/_app/chunks/index-733afa2b.js">
+		<meta http-equiv="content-security-policy" content=""><title>Darts Game</title>
+	<link rel="stylesheet" href="/darts-game/internal/assets/pages/__layout.svelte-3f11f91a.css">
+	<link rel="stylesheet" href="/darts-game/internal/assets/pages/index.svelte-b4a576c7.css">
+	<link rel="stylesheet" href="/darts-game/internal/assets/index-91a330f5.css">
+	<link rel="stylesheet" href="/darts-game/internal/assets/PageTitle-3db5471a.css">
+	<link rel="modulepreload" href="/darts-game/internal/start-9e8630f0.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/index-2e7372d8.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/index-8afca181.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="/darts-game/internal/pages/__layout.svelte-bd51cc5f.js">
+	<link rel="modulepreload" href="/darts-game/internal/pages/index.svelte-000bc704.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/index-44395234.js">
+	<link rel="modulepreload" href="/darts-game/internal/chunks/PageTitle-39c3a20c.js">
 	</head>
 	<body>
 		
-		<script type="module" data-hydrate="45h">
-		import { start } from "/darts-game/_app/start-0e74b551.js";
+
+
+<div class="page-wrapper svelte-fw0cbm">
+
+<div class="center-block svelte-186pxeh"><div class="wrapper svelte-186pxeh"><header class="header svelte-1wew190"><h1 class="title svelte-1wew190">Дартс</h1>
+</header>
+        <main class="svelte-186pxeh"><a class="button svelte-13a9a0k" href="/darts-game/game/" style="min-width: 230px;"><span class="wrapper svelte-17vy3z2"><span class="value-text svelte-17vy3z2">Начать игру</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="svg-line svelte-17vy3z2" d="M8.85083 19.1988L16.2686 11.9206" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path><path class="svg-line svelte-17vy3z2" d="M8.85083 4.90973L16.2686 11.9205" stroke="#2B2B2B" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+            <div class="save-game-block svelte-186pxeh"><a class="link svelte-9ehrr0" href="/darts-game/game/">Продолжить сохраненную игру</a></div></main></div>
+    <footer class="footer svelte-698ovd"><span class="footer__text svelte-698ovd">Артем Степанов</span>
+    <span class="footer__text svelte-698ovd">2022</span>
+</footer>
+</div>
+</div>
+
+
+		<script type="module" data-sveltekit-hydrate="192gv5">
+		import { start } from "/darts-game/internal/start-9e8630f0.js";
 		start({
-			target: document.querySelector('[data-hydrate="45h"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="192gv5"]').parentNode,
 			paths: {"base":"/darts-game","assets":"/darts-game"},
 			session: {},
 			route: true,
-			spa: true,
-			trailing_slash: "never",
-			hydrate: null
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/darts-game/internal/pages/__layout.svelte-bd51cc5f.js"),
+						import("/darts-game/internal/pages/index.svelte-000bc704.js")
+				],
+				params: {},
+				routeId: ""
+			}
 		});
 	</script>
 	</body>

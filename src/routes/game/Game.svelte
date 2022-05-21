@@ -20,9 +20,9 @@
     }
 
     let
-        players = getPlayersFromGameData($gameData),
-        playerIdInTurn = getPlayerIdInTurn(players),
-        playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn),
+        players = getPlayersFromGameData($gameData) || [],
+        playerIdInTurn = getPlayerIdInTurn(players) || "",
+        playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn) || "",
         turnResult = 0;
 
     $: {

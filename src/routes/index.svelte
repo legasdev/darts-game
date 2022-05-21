@@ -1,6 +1,6 @@
-
 <script>
-    import {gameData} from "../lib/stores/app";
+    import { base } from '$app/paths';
+    import { gameData } from "$lib/stores/app";
 
     import PageTitle from "./_components/PageTitle.svelte";
     import ButtonDefault from "./_components/ui/ButtonDefault/index.svelte";
@@ -18,13 +18,13 @@
         <PageTitle title="Дартс" />
         <main>
             <ButtonDefault
-                    value="Начать игру"
-                    style='min-width: 230px;'
-                    isLink="/game"
+                value="Начать игру"
+                style='min-width: 230px;'
+                isLink={`${base}/game/`}
             />
             {#if $gameData}
                 <div class="save-game-block">
-                    <Link href="/game" value="Продолжить сохраненную игру" />
+                    <Link href={`${base}/game/`} value="Продолжить сохраненную игру" />
                 </div>
             {/if}
         </main>
