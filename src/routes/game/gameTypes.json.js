@@ -38,6 +38,20 @@ export async function get() {
                 playersInitialData: {
                     score: 0,
                     roundsWon: 0,
+                    turn: [
+                        {
+                            value: 0,
+                            multiple: 1,
+                        },
+                        {
+                            value: 0,
+                            multiple: 1,
+                        },
+                        {
+                            value: 0,
+                            multiple: 1,
+                        }
+                    ]
                 },
             },
         ]

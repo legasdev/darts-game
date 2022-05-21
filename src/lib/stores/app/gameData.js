@@ -18,15 +18,44 @@ function createGameData() {
 
     const { subscribe, set: storeSet, update } = writable(gameData);
 
+    function saveDataToLocalStorage(infoByGameData) {
+        if ( !infoByGameData ) return;
+
+        localStorage.setItem(LS_NAMES.gameData, JSON.stringify(infoByGameData));
+    }
+
     function set(data) {
         storeSet(data);
-        localStorage.setItem(LS_NAMES.gameData, JSON.stringify(data));
+        saveDataToLocalStorage(data);
+    }
+
+    function updatePlayerTurn(playerId, values, multipliers) {
+        update(({ players, ...data }) => {
+            const updatedGameData = {
+                ...data,
+                players: players.map(player => {
+                    return player.id !== playerId
+                        ? player
+                        : {
+                        ...player,
+                            turn: player.turn.map((_, index) => ({
+                                value: values[index],
+                                multiple: multipliers[index]
+                            })),
+                        };
+                }),
+            };
+
+            saveDataToLocalStorage(updatedGameData);
+            return updatedGameData;
+        });
     }
 
     return {
         subscribe,
         set,
-        update
+        update,
+        updatePlayerTurn,
     };
 }
 

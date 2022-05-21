@@ -30,4 +30,11 @@
     .row_lamp--enabled {
         background: var(--color-grey-400);
     }
+
+    @media screen and (max-width: 480px) {
+        .row {
+            grid-template-columns: 0.875rem 3rem 1fr 0.25fr 0.5fr;
+            column-gap: 1rem;
+        }
+    }
 </style>

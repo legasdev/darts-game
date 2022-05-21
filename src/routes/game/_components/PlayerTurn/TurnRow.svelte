@@ -7,8 +7,6 @@
     export let result = 0;
     export let multiplier = 1;
 
-    const id = Math.random();
-
     $: result = inputValue * multiplier;
 </script>
 
@@ -16,7 +14,9 @@
 <div class="wrapper">
     <span class="title">{title}</span>
     <div class="row">
-        <InputNumber min={0} max={20} bind:value={inputValue} />
+        <div class="input-wrapper">
+            <InputNumber min={0} max={20} bind:value={inputValue} />
+        </div>
         <div class="multipliers">
             <InputRadio
                 bind:group={multiplier}
@@ -77,6 +77,11 @@
         width: 100%;
     }
 
+    .input-wrapper {
+        display: inline-block;
+        width: 100%;
+    }
+
     .result {
         font-style: normal;
         font-weight: 300;
@@ -99,5 +104,17 @@
 
     .multiple-name--select {
         color: var(--color-red-200);
+    }
+
+    @media screen and (max-width: 480px) {
+        .row {
+            grid-template-columns: 1fr 0.5fr;
+            grid-template-rows: auto auto;
+            row-gap: 0.25rem;
+        }
+
+        .input-wrapper {
+            grid-column: 1 / 3;
+        }
     }
 </style>

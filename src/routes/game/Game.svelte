@@ -21,20 +21,16 @@
         return players.find(({ id }) => id === playedId)?.name || '';
     }
 
-    let players = getPlayersFromGameData($gameData);
-    let playerIdInTurn = getPlayerIdInTurn(players);
-    let playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
-    let turnResult = 0;
+    let
+        players = getPlayersFromGameData($gameData),
+        playerIdInTurn = getPlayerIdInTurn(players),
+        playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn),
+        turnResult = 0;
 
     $: {
         players = getPlayersFromGameData($gameData);
-        console.log(`Информация об игре обновилась:`, $gameData);
-        console.log(`Игроки:`, players);
-    }
-    $: playerIdInTurn = getPlayerIdInTurn(players);
-    $: {
+        playerIdInTurn = getPlayerIdInTurn(players);
         playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
-        console.log(`Ход игрока: ${playerIdInTurn}:${playerNameInTurn}`);
     }
 </script>
 
@@ -48,7 +44,11 @@
     <SectionTitle title="Играет" info={{
         title: playerNameInTurn
     }} />
-    <PlayerTurn bind:result={turnResult} />
+    <PlayerTurn
+        {players}
+        playerId={playerIdInTurn}
+        bind:result={turnResult}
+    />
 </SectionBlock>
 
 <SectionBlock style="margin-bottom: 58px;">

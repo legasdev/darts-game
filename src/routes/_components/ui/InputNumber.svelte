@@ -6,13 +6,16 @@
     export let value = min;
     export let style = "";
 
-    function handleInput(event) {
-        const
-            valueInput = event.target.value;
+    let inputElement;
 
-        value = +valueInput > max
+    $: {
+        value = +value > max
             ? max
-            : +valueInput;
+            : +value;
+
+        if ( inputElement ) {
+            inputElement.value = value;
+        }
     }
 </script>
 
@@ -26,8 +29,8 @@
         type="number"
         {max}
         {min}
-        on:input={handleInput}
         bind:value
+        bind:this={inputElement}
     />
 </div>
 
