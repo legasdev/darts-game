@@ -7,8 +7,6 @@
     import PlayerTurn from "./_components/PlayerTurn/PlayerTurn.svelte";
     import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
 
-    export let gameTypes;
-
     function getPlayersFromGameData(gameData) {
         return gameData?.players || [];
     }

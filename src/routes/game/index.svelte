@@ -28,7 +28,7 @@
 <PageTitle title={$gameData ? 'Игра' : 'Подготовка к игре'} />
 <main>
     {#if $gameData}
-        <Game {gameTypes} />
+        <Game />
     {:else}
         <SettingsGame {gameTypes} />
     {/if}
