@@ -1,0 +1,140 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-3ac31737.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-1432aad0.js",
+      "_index-733afa2b.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/game/Game.svelte",
+      "src/routes/game/SettingsGame.svelte",
+      "src/routes/game/index.svelte",
+      "src/routes/index.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-9b03d492.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-1432aad0.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-3f11f91a.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-41ee57ef.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-1432aad0.js"
+    ]
+  },
+  "src/routes/game/Game.svelte": {
+    "file": "pages/game/Game.svelte-e2e8954d.js",
+    "src": "src/routes/game/Game.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-1432aad0.js",
+      "_index-c604f8e0.js",
+      "_InputNumber-92c9ec5b.js",
+      "_index-733afa2b.js"
+    ],
+    "css": [
+      "assets/pages/game/Game.svelte-a20ed0f9.css"
+    ]
+  },
+  "src/routes/game/SettingsGame.svelte": {
+    "file": "pages/game/SettingsGame.svelte-cf3f2fa5.js",
+    "src": "src/routes/game/SettingsGame.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-1432aad0.js",
+      "_index-c604f8e0.js",
+      "_index-733afa2b.js",
+      "_InputNumber-92c9ec5b.js"
+    ],
+    "css": [
+      "assets/pages/game/SettingsGame.svelte-9a5ed9dc.css"
+    ]
+  },
+  "src/routes/game/index.svelte": {
+    "file": "pages/game/index.svelte-d97301f0.js",
+    "src": "src/routes/game/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-1432aad0.js",
+      "_index-c604f8e0.js",
+      "_PageTitle-53dbd1d0.js",
+      "src/routes/game/SettingsGame.svelte",
+      "src/routes/game/Game.svelte",
+      "_index-733afa2b.js",
+      "_InputNumber-92c9ec5b.js"
+    ],
+    "css": [
+      "assets/pages/game/index.svelte-703311c4.css"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-95f4fb58.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-1432aad0.js",
+      "_index-c604f8e0.js",
+      "_PageTitle-53dbd1d0.js",
+      "_index-733afa2b.js"
+    ],
+    "css": [
+      "assets/pages/index.svelte-b4a576c7.css"
+    ]
+  },
+  "_index-1432aad0.js": {
+    "file": "chunks/index-1432aad0.js"
+  },
+  "_index-733afa2b.js": {
+    "file": "chunks/index-733afa2b.js",
+    "imports": [
+      "_index-1432aad0.js"
+    ]
+  },
+  "_index-c604f8e0.js": {
+    "file": "chunks/index-c604f8e0.js",
+    "imports": [
+      "_index-733afa2b.js",
+      "_index-1432aad0.js"
+    ],
+    "css": [
+      "assets/index-91a330f5.css"
+    ]
+  },
+  "_InputNumber-92c9ec5b.js": {
+    "file": "chunks/InputNumber-92c9ec5b.js",
+    "imports": [
+      "_index-1432aad0.js"
+    ],
+    "css": [
+      "assets/InputNumber-092dd856.css"
+    ]
+  },
+  "_PageTitle-53dbd1d0.js": {
+    "file": "chunks/PageTitle-53dbd1d0.js",
+    "imports": [
+      "_index-1432aad0.js"
+    ],
+    "css": [
+      "assets/PageTitle-3db5471a.css"
+    ]
+  }
+}
