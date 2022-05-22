@@ -1,18 +1,17 @@
-# create-svelte
+# Игра в Дартс
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Просто приложение для учета данных игроков во время игры в дартс.
+<br/>Ссылка на приложение: [https://legasdev.github.io/darts-game/](https://legasdev.github.io/darts-game/)
 
-## Creating a project
+## Доступные игры
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [x] 301/501/1001
+- [ ] Раунд
+- [ ] Все пятерки
+- [ ] Двадцать семь
 
-```bash
-# create a new project in the current directory
-npm init svelte
+Список игр: [перейти](http://www.sportspravka.com/main.mhtml?Part=317&PubID=4964)
 
-# create a new project in my-app
-npm init svelte my-app
-```
 
 ## Developing
 
