@@ -15,7 +15,7 @@
 
 
 <svelte:head>
-    <title>Darts Game</title>
+    <title>Игра в Дартс</title>
 </svelte:head>
 
 <div class="center-block">

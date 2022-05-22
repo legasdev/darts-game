@@ -1,9 +1,10 @@
 <script>
     import UserFirstLetterOnColor from "../../../_components/ui/UserFirstLetterOnColor.svelte";
 
-    export let player;
-
-    const { name, color, roundsWon, score } = player;
+    export let name = "";
+    export let color = "#FFFFFF";
+    export let roundsWon = 0;
+    export let score = 0;
 </script>
 
 <UserFirstLetterOnColor {color} {name} />

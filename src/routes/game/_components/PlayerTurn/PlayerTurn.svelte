@@ -29,7 +29,6 @@
 
     afterUpdate(() => {
         if ( prevPlayerId !== playerId ) {
-            console.log('UPDATED')
             prevPlayerId = playerId;
             values = inputValues = [0, 0, 0];
             multipliers = [1, 1, 1];

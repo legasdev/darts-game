@@ -12,9 +12,9 @@
     <TableRow>
         <TableHeader />
     </TableRow>
-    {#each players as player (player.id)}
-        <TableRow isActive={playerIdInTurn === player.id}>
-            <TablePlayer {player} />
+    {#each players as { id, name, color, roundsWon, score } (id)}
+        <TableRow isActive={playerIdInTurn === id}>
+            <TablePlayer {name} {color} {roundsWon} {score} />
         </TableRow>
     {/each}
 </div>

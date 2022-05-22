@@ -15,7 +15,7 @@
     <span class="title">{title}</span>
     <div class="row">
         <div class="input-wrapper">
-            <InputNumber min={0} max={20} bind:value={inputValue} />
+            <InputNumber min={0} max={50} bind:value={inputValue} />
         </div>
         <div class="multipliers">
             <InputRadio
