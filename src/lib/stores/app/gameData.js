@@ -62,12 +62,51 @@ function createGameData() {
         });
     }
 
+    function clearPlayerTurn(playerId) {
+        updatePlayerTurn(playerId, [0, 0, 0], [1, 1, 1]);
+    }
+
+    function nextPlayer(currentPlayerId, turnResult) {
+        update(({ players, ...data }) => {
+            const updatedGameData = {
+                ...data,
+                players: Array.isArray(players)
+                    ? [...players].map((player, index) => {
+                        if ( player.id === currentPlayerId ) {
+                            return {
+                                ...player,
+                                score: +player.score + turnResult,
+                                isTurn: false,
+                            };
+                        }
+
+                        const nextIndex = currentPlayerId === players.length - 1
+                            ? 0
+                            : currentPlayerId + 1;
+
+                        if ( index !== nextIndex ) return;
+
+                        return {
+                            ...player,
+                            isTurn: true,
+                        };
+                    })
+                    : players,
+            };
+
+            saveDataToLocalStorage(updatedGameData);
+            return updatedGameData;
+        });
+    }
+
     return {
         subscribe,
         set,
         update,
         updatePlayerTurn,
+        clearPlayerTurn,
         newGame,
+        nextPlayer,
     };
 }
 

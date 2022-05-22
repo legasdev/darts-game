@@ -1,4 +1,5 @@
 <script>
+    import { afterUpdate } from "svelte";
     import { gameData } from "$lib/stores/app";
 
     import TurnRow from "./TurnRow.svelte";
@@ -6,6 +7,9 @@
     export let players;
     export let playerId;
     export let result = 0;
+
+    // TODO: May be fix this?
+    let prevPlayerId = playerId;
 
     const stepsList = [
         {id: "1", name: "Первый бросок"},
@@ -20,12 +24,17 @@
 
     $: {
         result = values.reduce((sum, value) => sum + value, 0);
-        console.log('values changed', inputValues);
-        console.log('multipliers changed', multipliers);
-        console.log('result changed', result);
-
         gameData.updatePlayerTurn(playerId, inputValues, multipliers);
     }
+
+    afterUpdate(() => {
+        if ( prevPlayerId !== playerId ) {
+            console.log('UPDATED')
+            prevPlayerId = playerId;
+            values = inputValues = [0, 0, 0];
+            multipliers = [1, 1, 1];
+        }
+    });
 </script>
 
 

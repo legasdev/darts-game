@@ -30,6 +30,11 @@
         playerIdInTurn = getPlayerIdInTurn(players);
         playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
     }
+
+    function handleClickNextPlayer() {
+        gameData.nextPlayer(playerIdInTurn, turnResult);
+        gameData.clearPlayerTurn(playerIdInTurn);
+    }
 </script>
 
 
@@ -58,4 +63,5 @@
 <ButtonDefault
     value="Следующий игрок"
     style="min-width: 230px"
+    on:click={handleClickNextPlayer}
 />
