@@ -22,10 +22,9 @@
     let values = [0, 0, 0];
     let multipliers = infoByTurn.map(({ multiple }) => multiple);
 
-    $: {
-        result = values.reduce((sum, value) => sum + value, 0);
-        gameData.updatePlayerTurn(playerId, inputValues, multipliers);
-    }
+    $: values = inputValues.map((value, index) => value * multipliers[index]);
+    $: result = values.reduce((sum, value) => sum + value, 0);
+    $: gameData.updatePlayerTurn(playerId, inputValues, multipliers);
 
     afterUpdate(() => {
         if ( prevPlayerId !== playerId ) {
@@ -34,15 +33,24 @@
             multipliers = [1, 1, 1];
         }
     });
+
+    function handleInputValue(event) {
+        const { value, id } = event.detail;
+
+        inputValues[id] = value;
+        inputValues = inputValues;
+    }
 </script>
 
 
 <div class="player-turn">
     {#each stepsList as step, index (step.id)}
         <TurnRow
+            id={index}
+            result={inputValues[index] * multipliers[index]}
             title={step.name}
-            bind:inputValue={inputValues[index]}
-            bind:result={values[index]}
+            inputValue={inputValues[index]}
+            on:inputValue={handleInputValue}
             bind:multiplier={multipliers[index]}
         />
     {/each}

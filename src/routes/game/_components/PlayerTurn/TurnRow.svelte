@@ -1,13 +1,23 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     import InputNumber from "../../../_components/ui/InputNumber.svelte";
     import InputRadio from "../../../_components/ui/InputRadio.svelte";
 
+    const dispatch = createEventDispatcher();
+
+    export let id = 0;
     export let title = "";
     export let inputValue = 0;
     export let result = 0;
     export let multiplier = 1;
 
-    $: result = inputValue * multiplier;
+    $: {
+        dispatch('inputValue', {
+            id,
+            value: inputValue,
+        });
+    }
 </script>
 
 
@@ -108,7 +118,7 @@
 
     @media screen and (max-width: 480px) {
         .row {
-            grid-template-columns: 1fr 0.5fr;
+            grid-template-columns: 1fr 0.85fr;
             grid-template-rows: auto auto;
             row-gap: 0.25rem;
         }
