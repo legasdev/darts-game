@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-70939b5f.js",
+    "file": "start-0aa2d5ea.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -39,13 +39,13 @@
     ]
   },
   "src/routes/game/Game.svelte": {
-    "file": "pages/game/Game.svelte-05985061.js",
+    "file": "pages/game/Game.svelte-7012b9c8.js",
     "src": "src/routes/game/Game.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-51b4517b.js",
-      "_index-04ea6c06.js",
+      "_index-1db2271d.js",
       "_InputNumber-46946701.js",
       "_index-3c130a7d.js"
     ],
@@ -54,13 +54,13 @@
     ]
   },
   "src/routes/game/SettingsGame.svelte": {
-    "file": "pages/game/SettingsGame.svelte-1b752b5c.js",
+    "file": "pages/game/SettingsGame.svelte-62ea32fa.js",
     "src": "src/routes/game/SettingsGame.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-51b4517b.js",
-      "_index-04ea6c06.js",
+      "_index-1db2271d.js",
       "_index-3c130a7d.js",
       "_InputNumber-46946701.js"
     ],
@@ -69,14 +69,14 @@
     ]
   },
   "src/routes/game/index.svelte": {
-    "file": "pages/game/index.svelte-5234cf0d.js",
+    "file": "pages/game/index.svelte-5d05a3ad.js",
     "src": "src/routes/game/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-51b4517b.js",
       "_paths-396f020f.js",
-      "_index-04ea6c06.js",
+      "_index-1db2271d.js",
       "_PageTitle-22eeff95.js",
       "src/routes/game/SettingsGame.svelte",
       "src/routes/game/Game.svelte",
@@ -88,14 +88,14 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-b8e275f3.js",
+    "file": "pages/index.svelte-7a38f258.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-51b4517b.js",
       "_paths-396f020f.js",
-      "_index-04ea6c06.js",
+      "_index-1db2271d.js",
       "_PageTitle-22eeff95.js",
       "_index-3c130a7d.js"
     ],
@@ -115,8 +115,8 @@
   "_paths-396f020f.js": {
     "file": "chunks/paths-396f020f.js"
   },
-  "_index-04ea6c06.js": {
-    "file": "chunks/index-04ea6c06.js",
+  "_index-1db2271d.js": {
+    "file": "chunks/index-1db2271d.js",
     "imports": [
       "_index-3c130a7d.js",
       "_index-51b4517b.js"

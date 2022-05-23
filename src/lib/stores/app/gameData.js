@@ -48,7 +48,7 @@ function createGameData() {
                     return player.id !== playerId
                         ? player
                         : {
-                        ...player,
+                            ...player,
                             turn: player.turn.map((_, index) => ({
                                 value: values[index],
                                 multiple: multipliers[index]
@@ -62,10 +62,6 @@ function createGameData() {
         });
     }
 
-    function clearPlayerTurn(playerId) {
-        updatePlayerTurn(playerId, [0, 0, 0], [1, 1, 1]);
-    }
-
     function nextPlayer(currentPlayerId, turnResult) {
         update(({ players, ...data }) => {
             const updatedGameData = {
@@ -77,6 +73,10 @@ function createGameData() {
                                 ...player,
                                 score: +player.score + turnResult,
                                 isTurn: false,
+                                turn: player.turn.map(() => ({
+                                    value: 0,
+                                    multiple: 0
+                                })),
                             };
                         }
 
@@ -84,7 +84,7 @@ function createGameData() {
                             ? 0
                             : currentPlayerId + 1;
 
-                        if ( index !== nextIndex ) return;
+                        if ( index !== nextIndex ) return player;
 
                         return {
                             ...player,
@@ -104,7 +104,6 @@ function createGameData() {
         set,
         update,
         updatePlayerTurn,
-        clearPlayerTurn,
         newGame,
         nextPlayer,
     };

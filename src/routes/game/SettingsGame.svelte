@@ -35,7 +35,6 @@
     function handleStartGame() {
         const
             selectedSettings = selectedGame?.settings.map(({id}) => id),
-
             gameDataObject = {
                 id: Date.now(),
                 gameId: selectedGameId,

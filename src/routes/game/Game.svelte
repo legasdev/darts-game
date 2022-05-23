@@ -33,7 +33,6 @@
 
     function handleClickNextPlayer() {
         gameData.nextPlayer(playerIdInTurn, turnResult);
-        gameData.clearPlayerTurn(playerIdInTurn);
     }
 </script>
 
