@@ -31,7 +31,7 @@ export async function get() {
                         name: 'Раундов для победы',
                         type: 'number',
                         min: '1',
-                        max: '9',
+                        max: '10',
                         default: '1'
                     }
                 ],
