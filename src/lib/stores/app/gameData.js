@@ -71,7 +71,7 @@ function createGameData() {
                         if ( player.id === currentPlayerId ) {
                             return {
                                 ...player,
-                                score: +player.score + turnResult,
+                                score: +player.score - turnResult,
                                 isTurn: false,
                                 turn: player.turn.map(() => ({
                                     value: 0,

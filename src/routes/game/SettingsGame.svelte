@@ -35,18 +35,33 @@
     function handleStartGame() {
         const
             selectedSettings = selectedGame?.settings.map(({id}) => id),
+
+            settingsObject = selectedSettings?.reduce((obj, option) => (
+                {
+                    ...obj,
+                    [option]: gameSettings[option] || null,
+                }), {}),
+
+            playerStartInfo = Object.keys(settingsObject).reduce((info, key) => {
+                const settingInfo = selectedGame.settings.find(({ id }) => id === key);
+
+                // TODO: Need to refactor this
+                if (settingInfo.type === 'number') return info;
+
+                return {
+                    ...info,
+                    [settingInfo.forInfo]: settingInfo.options.find(({ id }) => id === settingsObject[key]).value,
+                };
+            }, {}),
+
             gameDataObject = {
                 id: Date.now(),
                 gameId: selectedGameId,
-                settings: selectedSettings?.reduce((obj, option) => (
-                        {
-                            ...obj,
-                            [option]: gameSettings[option] || null,
-                        })
-                    , {}),
+                settings: settingsObject,
                 players: $players?.map(player => ({
                     ...player,
                     ...selectedGame.playersInitialData,
+                    ...playerStartInfo,
                 })),
             };
 
