@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-bb26b116.js",
+    "file": "start-e9ef4957.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -39,7 +39,7 @@
     ]
   },
   "src/routes/game/Game.svelte": {
-    "file": "pages/game/Game.svelte-e599b912.js",
+    "file": "pages/game/Game.svelte-0ec0244a.js",
     "src": "src/routes/game/Game.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -69,7 +69,7 @@
     ]
   },
   "src/routes/game/index.svelte": {
-    "file": "pages/game/index.svelte-a30a035b.js",
+    "file": "pages/game/index.svelte-bce387b2.js",
     "src": "src/routes/game/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,

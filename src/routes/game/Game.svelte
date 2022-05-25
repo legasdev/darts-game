@@ -15,20 +15,26 @@
         return playersList.find(({ isTurn }) => isTurn)?.id;
     }
 
-    function getPlayerNameInTurn(players, playedId) {
-        return players.find(({ id }) => id === playedId)?.name || '';
+    function getPlayerNameInTurn(players, playerId) {
+        return players.find(({ id }) => id === playerId)?.name || '';
+    }
+
+    function getPlayerById(playerId) {
+        return players.find(({ id }) => id === playerId);
     }
 
     let
         players = getPlayersFromGameData($gameData) || [],
         playerIdInTurn = getPlayerIdInTurn(players) || "",
         playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn) || "",
+        playerScore = getPlayerById(playerIdInTurn)?.score || 0,
         turnResult = 0;
 
     $: {
         players = getPlayersFromGameData($gameData);
         playerIdInTurn = getPlayerIdInTurn(players);
         playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
+        playerScore = getPlayerById(playerIdInTurn)?.score || 0;
     }
 
     function handleClickNextPlayer() {
@@ -55,7 +61,8 @@
 
 <SectionBlock style="margin-bottom: 58px;">
     <SectionTitle title="Очков за раунд" info={{
-        title: turnResult
+        title: turnResult,
+        text: `Осталось: ${playerScore - turnResult}`
     }} />
 </SectionBlock>
 
