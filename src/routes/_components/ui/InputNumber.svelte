@@ -14,8 +14,14 @@
             : +value;
 
         if ( inputElement ) {
-            inputElement.value = value;
+            inputElement.value = +value > max
+                ? max
+                : +value;
         }
+    }
+
+    function onChange(event) {
+        console.log(event.target.value);
     }
 </script>
 
@@ -31,6 +37,7 @@
         {min}
         bind:value
         bind:this={inputElement}
+        on:input={onChange}
     />
 </div>
 

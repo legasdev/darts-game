@@ -6,6 +6,8 @@
 
     const dispatch = createEventDispatcher();
 
+    const MAX_POINTS = 50;
+
     export let id = 0;
     export let title = "";
     export let inputValue = 0;
@@ -15,7 +17,7 @@
     $: {
         dispatch('inputValue', {
             id,
-            value: inputValue,
+            value: inputValue > MAX_POINTS ? MAX_POINTS : inputValue,
         });
     }
 </script>
@@ -25,7 +27,7 @@
     <span class="title">{title}</span>
     <div class="row">
         <div class="input-wrapper">
-            <InputNumber min={0} max={50} bind:value={inputValue} />
+            <InputNumber min={0} max={MAX_POINTS} bind:value={inputValue} />
         </div>
         <div class="multipliers">
             <InputRadio
@@ -118,13 +120,24 @@
 
     @media screen and (max-width: 480px) {
         .row {
-            grid-template-columns: 1fr 0.85fr;
+            grid-template-columns: 0.85fr 1fr;
             grid-template-rows: auto auto;
             row-gap: 0.25rem;
         }
 
         .input-wrapper {
             grid-column: 1 / 3;
+        }
+
+        .result {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            text-align: left;
+        }
+
+        .multipliers {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
         }
     }
 </style>

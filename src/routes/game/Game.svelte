@@ -6,6 +6,7 @@
     import PlayersTable from "./_components/PlayersTable/PlayersTable.svelte";
     import PlayerTurn from "./_components/PlayerTurn/PlayerTurn.svelte";
     import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
+    import InputNumber from "../_components/ui/InputNumber.svelte";
 
     function getPlayersFromGameData(gameData) {
         return gameData?.players || [];
@@ -61,9 +62,14 @@
 
 <SectionBlock style="margin-bottom: 58px;">
     <SectionTitle title="Очков за раунд" info={{
-        title: turnResult,
-        text: `Осталось: ${playerScore - turnResult}`
+        title: `Осталось: ${playerScore - turnResult}`,
     }} />
+    <InputNumber
+        id="player-turn-result"
+        min={0}
+        max={180}
+        bind:value={turnResult}
+    />
 </SectionBlock>
 
 <ButtonDefault

@@ -47,7 +47,7 @@
     {#each stepsList as step, index (step.id)}
         <TurnRow
             id={index}
-            result={inputValues[index] * multipliers[index]}
+            result={values[index]}
             title={step.name}
             inputValue={inputValues[index]}
             on:inputValue={handleInputValue}
