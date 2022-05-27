@@ -31,12 +31,10 @@
         playerScore = getPlayerById(playerIdInTurn)?.score || 0,
         turnResult = 0;
 
-    $: {
-        players = getPlayersFromGameData($gameData);
-        playerIdInTurn = getPlayerIdInTurn(players);
-        playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
-        playerScore = getPlayerById(playerIdInTurn)?.score || 0;
-    }
+    $: players = getPlayersFromGameData($gameData);
+    $: playerIdInTurn = getPlayerIdInTurn(players);
+    $: playerNameInTurn = getPlayerNameInTurn(players, playerIdInTurn);
+    $: playerScore = getPlayerById(playerIdInTurn)?.score || 0;
 
     function handleClickNextPlayer() {
         gameData.nextPlayer(playerIdInTurn, turnResult);
