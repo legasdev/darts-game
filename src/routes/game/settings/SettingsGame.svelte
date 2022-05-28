@@ -1,13 +1,32 @@
+<script context="module">
+    import { base } from '$app/paths';
+
+    export async function load({ fetch }) {
+        try {
+            const response = await fetch(`${base}/game/gameTypes.json`);
+
+            return {
+                props: {
+                    gameTypes: await response.json(),
+                },
+            };
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    }
+</script>
+
 <script>
     import { gameData, players } from "$lib/stores/app";
 
-    import SectionBlock from "../_components/SectionBlock.svelte";
-    import SectionTitle from "../_components/SectionTitle.svelte";
-    import PlayerRowPreview from "../_components/PlayerRowPreview.svelte";
-    import AddPlayer from "../_components/AddPlayer.svelte";
-    import Select from "../_components/ui/ButtonDefault/Select.svelte";
-    import SettingsGameBlock from "../_components/SettingsGameBlock.svelte";
-    import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
+    import SectionBlock from "$lib/components/SectionBlock.svelte";
+    import SectionTitle from "$lib/components/SectionTitle.svelte";
+    import PlayerRowPreview from "$lib/components/PlayerRowPreview.svelte";
+    import AddPlayer from "$lib/components/AddPlayer.svelte";
+    import Select from "$lib/components/ui/ButtonDefault/Select.svelte";
+    import SettingsGameBlock from "$lib/components/SettingsGameBlock.svelte";
+    import ButtonDefault from "$lib/components/ui/ButtonDefault/index.svelte";
 
 
     export let gameTypes = [];

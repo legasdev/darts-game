@@ -1,8 +1,8 @@
 <script>
     import { createEventDispatcher } from 'svelte';
 
-    import InputNumber from "../../../_components/ui/InputNumber.svelte";
-    import InputRadio from "../../../_components/ui/InputRadio.svelte";
+    import InputNumber from "$lib/components/ui/InputNumber.svelte";
+    import InputRadio from "$lib/components/ui/InputRadio.svelte";
 
     const dispatch = createEventDispatcher();
 

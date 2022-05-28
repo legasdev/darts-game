@@ -1,5 +1,5 @@
 <script>
-    import UserFirstLetterOnColor from "../../../_components/ui/UserFirstLetterOnColor.svelte";
+    import UserFirstLetterOnColor from "$lib/components/ui/UserFirstLetterOnColor.svelte";
 
     export let name = "";
     export let color = "#FFFFFF";

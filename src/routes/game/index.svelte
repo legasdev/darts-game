@@ -1,30 +1,11 @@
-<script context="module">
-    import { base } from '$app/paths';
-
-    export async function load({ fetch }) {
-        try {
-            const response = await fetch(`${base}/game/gameTypes.json`);
-
-            return {
-                props: {
-                    gameTypes: await response.json(),
-                },
-            };
-        } catch (error) {
-            console.error(error);
-            return [];
-        }
-    }
-</script>
-
 <script>
+    import { goto } from "$app/navigation";
+
     import { gameData } from "$lib/stores/app";
 
-    import PageTitle from "../_components/PageTitle.svelte";
-    import SettingsGame from "./SettingsGame.svelte";
-    import Game from "./Game.svelte";
+    import PageTitle from "$lib/components/PageTitle.svelte";
 
-    export let gameTypes;
+    import Game from "./Game.svelte";
 </script>
 
 
@@ -37,7 +18,7 @@
     {#if $gameData}
         <Game />
     {:else}
-        <SettingsGame {gameTypes} />
+        {goto('/game/settings/')}
     {/if}
 </main>
 

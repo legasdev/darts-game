@@ -1,11 +1,11 @@
 <script>
-    import { base } from '$app/paths';
+    import { base } from "$app/paths";
     import { gameData } from "$lib/stores/app";
 
-    import PageTitle from "./_components/PageTitle.svelte";
-    import ButtonDefault from "./_components/ui/ButtonDefault/index.svelte";
-    import Footer from "./_components/Footer.svelte";
-    import Link from "./_components/ui/Link.svelte";
+    import PageTitle from "$lib/components/PageTitle.svelte";
+    import ButtonDefault from "$lib/components/ui/ButtonDefault/index.svelte";
+    import Footer from "$lib/components/Footer.svelte";
+    import Link from "$lib/components/ui/Link.svelte";
 
 
     function handleClickNewGame() {

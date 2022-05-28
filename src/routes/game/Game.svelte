@@ -1,12 +1,12 @@
 <script>
     import { gameData } from "$lib/stores/app";
 
-    import SectionBlock from "../_components/SectionBlock.svelte";
-    import SectionTitle from "../_components/SectionTitle.svelte";
-    import PlayersTable from "./_components/PlayersTable/PlayersTable.svelte";
-    import PlayerTurn from "./_components/PlayerTurn/PlayerTurn.svelte";
-    import ButtonDefault from "../_components/ui/ButtonDefault/index.svelte";
-    import InputNumber from "../_components/ui/InputNumber.svelte";
+    import SectionBlock from "$lib/components/SectionBlock.svelte";
+    import SectionTitle from "$lib/components/SectionTitle.svelte";
+    import PlayersTable from "$lib/components/PlayersTable/PlayersTable.svelte";
+    import PlayerTurn from "$lib/components/PlayerTurn/PlayerTurn.svelte";
+    import ButtonDefault from "$lib/components/ui/ButtonDefault/index.svelte";
+    import InputNumber from "$lib/components/ui/InputNumber.svelte";
 
     function getPlayersFromGameData(gameData) {
         return gameData?.players || [];

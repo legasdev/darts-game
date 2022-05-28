@@ -1,8 +1,8 @@
 <script>
-    import SectionBlock from "../_components/SectionBlock.svelte";
-    import SectionTitle from "../_components/SectionTitle.svelte";
-
     import { gameData } from "$lib/stores/app";
+
+    import SectionBlock from "$lib/components/SectionBlock.svelte";
+    import SectionTitle from "$lib/components/SectionTitle.svelte";
 
     $: winnerPlayer = $gameData.forEach(player => console.log(player))
     

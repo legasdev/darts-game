@@ -1,6 +1,6 @@
 <script>
-    import Select from "../_components/ui/ButtonDefault/Select.svelte";
-    import InputNumber from "../_components/ui/InputNumber.svelte";
+    import Select from "$lib/components/ui/ButtonDefault/Select.svelte";
+    import InputNumber from "$lib/components/ui/InputNumber.svelte";
 
     export let settings;
     export let gameSettings;

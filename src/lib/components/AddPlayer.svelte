@@ -5,8 +5,8 @@
 <script>
     import { players } from "$lib/stores/app";
 
-    import ColorPicker from "../_components/ui/ColorPicker.svelte";
-    import InputText from "../_components/ui/InputText.svelte";
+    import ColorPicker from "$lib/components/ui/ColorPicker.svelte";
+    import InputText from "$lib/components/ui/InputText.svelte";
 
     let nameValue = '';
     let colorValue = `#${randomHex()}`;
